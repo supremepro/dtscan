@@ -1,0 +1,9 @@
+PySide6>=6.6
+pdfplumber>=0.11
+python-dateutil>=2.9
+
+# Optional: OCR fallback for scanned/image-only PDFs.
+# Requires Tesseract installed on the system (https://github.com/UB-Mannheim/tesseract/wiki on Windows).
+pytesseract>=0.3.10
+pdf2image>=1.17
+Pillow>=10.0
