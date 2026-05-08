@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List
 
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QDragEnterEvent, QDragLeaveEvent, QDropEvent
+from PySide6.QtGui import QDragEnterEvent, QDragLeaveEvent, QDropEvent, QFont
 from PySide6.QtWidgets import QFrame, QLabel, QVBoxLayout
 
 
@@ -30,7 +30,7 @@ class DropZone(QFrame):
         title.setObjectName("DropTitle")
         title_font = title.font()
         title_font.setPointSize(13)
-        title_font.setWeight(600)
+        title_font.setWeight(QFont.Weight.DemiBold)
         title.setFont(title_font)
 
         hint = QLabel("or click “Add Files” above. Folders are scanned recursively.")
