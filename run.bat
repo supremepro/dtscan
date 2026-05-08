@@ -4,8 +4,9 @@ REM Structured as labelled subroutines to avoid cmd.exe parsing issues with
 REM parentheses in folder paths (e.g. "Downloads\dtscan(1)\...").
 setlocal enableextensions
 set "ROOT=%~dp0"
+if "%ROOT:~-1%"=="\" set "ROOT=%ROOT:~0,-1%"
 cd /d "%ROOT%"
-set "VENV=%ROOT%.venv"
+set "VENV=%ROOT%\.venv"
 set "PY=%VENV%\Scripts\python.exe"
 set "BOOT="
 
@@ -52,7 +53,7 @@ exit /b %ERRORLEVEL%
 "%PY%" -c "import PySide6, pdfplumber, dateutil" 2>nul
 if not errorlevel 1 exit /b 0
 echo [DTScan] Installing dependencies...
-"%PY%" -m pip install -r "%ROOT%requirements.txt"
+"%PY%" -m pip install -r "%ROOT%\requirements.txt"
 exit /b %ERRORLEVEL%
 
 

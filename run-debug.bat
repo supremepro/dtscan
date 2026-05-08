@@ -2,8 +2,9 @@
 REM Verbose launcher: prints diagnostics, installs anything missing, then runs.
 setlocal enableextensions
 set "ROOT=%~dp0"
+if "%ROOT:~-1%"=="\" set "ROOT=%ROOT:~0,-1%"
 cd /d "%ROOT%"
-set "VENV=%ROOT%.venv"
+set "VENV=%ROOT%\.venv"
 set "PY=%VENV%\Scripts\python.exe"
 
 if not exist "%PY%" (
